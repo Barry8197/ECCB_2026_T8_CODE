@@ -1,0 +1,9 @@
+# Package requirements for each session 
+
+## Session 1 - Netwworks Intro
+
+## Session 2 - Multi-Omics
+
+## Session 3 - Agentic LLM
+
+## Session 4 - KG Query Challenge

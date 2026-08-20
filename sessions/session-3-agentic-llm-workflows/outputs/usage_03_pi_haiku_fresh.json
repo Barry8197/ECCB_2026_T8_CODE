@@ -1,0 +1,41 @@
+{
+ "date": "2026-08-17",
+ "model": "claude-haiku-4-5",
+ "runs": [
+  {
+   "file": "2026-08-17T12-49-32-772Z_01a00fc5-2264-76b4-9b5e-8296c5b0fb91.jsonl",
+   "calls": 11,
+   "input": 2924,
+   "output": 9709,
+   "cacheRead": 101120,
+   "cacheWrite": 19019,
+   "cost": 0.085355
+  },
+  {
+   "file": "2026-08-17T12-51-11-901Z_01a00fc6-a59d-7ef9-a32f-23c5226f8ccd.jsonl",
+   "calls": 10,
+   "input": 2882,
+   "output": 4252,
+   "cacheRead": 108473,
+   "cacheWrite": 20103,
+   "cost": 0.060118
+  },
+  {
+   "file": "2026-08-17T12-52-03-862Z_01a00fc7-7096-791c-80d1-59c99642d401.jsonl",
+   "calls": 6,
+   "input": 8570,
+   "output": 1465,
+   "cacheRead": 12233,
+   "cacheWrite": 7294,
+   "cost": 0.026236
+  }
+ ],
+ "total": {
+  "calls": 27,
+  "input": 14376,
+  "output": 15426,
+  "cacheRead": 221826,
+  "cacheWrite": 46416,
+  "cost": 0.171709
+ }
+}

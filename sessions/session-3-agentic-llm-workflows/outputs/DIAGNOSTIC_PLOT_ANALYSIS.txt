@@ -1,0 +1,122 @@
+================================================================================
+MOFA DIAGNOSTIC PLOT ANALYSIS: WHICH PLOT BEST SUPPORTS SUBTYPE BIOLOGY CAPTURE?
+================================================================================
+
+STANDARD DIAGNOSTIC PLOT SET (Generated 2026-07-27)
+───────────────────────────────────────────────────
+1. part2_mofa_r2_heatmap.png
+   - Shows variance explained (R2) by each factor in each omics view
+   - Factor1 captures 31.2% methylation variance
+   - Factor2 captures 12.5% transcriptomics, 6.8% proteomics variance
+   - Indicates which omics views are reconstructed, not subtype separation
+
+2. part2_mofa_factor_boxplots.png
+   - Shows factor value distributions across 5 PAM50 subtypes (LumA, Normal, LumB, Her2, Basal)
+   - Top 4 factors shown: Factor2, Factor1, Factor7, Factor8
+   - FACTOR2 shows the strongest subtype stratification:
+     * LumA (median ~1.5): positive values
+     * Normal (median ~0): near zero
+     * LumB (median ~0): near zero  
+     * Her2 (median ~-2): negative
+     * Basal (median ~-4.5): strongly negative
+   - Directly visualizes subtype separation in latent factor space
+
+3. part2_mofa_confusion_matrix.png
+   - Tests predictive capacity: logistic regression on MOFA factors
+   - Held-out test set performance (n=151):
+     * Basal: 22/24 correct (92% recall)
+     * Her2: 9/10 correct (90% recall)
+     * LumA: 72/81 correct (89% recall)
+     * LumB: 20/30 correct (67% recall)
+     * Normal: 2/6 correct (33% recall)
+   - Overall accuracy: 82.8%, Balanced accuracy: 74.1%
+   - Demonstrates MOFA factors are sufficient for subtype classification
+
+4. part2_mofa_ranked_weights.png
+   - Shows top driving genes (weights) for top factors in transcriptomics
+   - Factor2, Factor1, Factor7 each show distinct gene loading patterns
+   - Useful for biological interpretation, but not direct evidence of subtype capture
+
+
+QUANTITATIVE EVIDENCE FOR SUBTYPE ASSOCIATION
+──────────────────────────────────────────────
+Factor-subtype association (one-way ANOVA eta-squared, training set):
+
+    Factor          Eta-squared    Interpretation
+    ─────────────────────────────────────────────
+    Factor2         0.7426         ★★★ 74% of Factor2 variance explained by subtype!
+    Factor1         0.3498         35% of Factor1 variance explained by subtype
+    Factor7         0.2642         26% of Factor7 variance explained by subtype
+    Factor8         0.1732         17% of Factor8 variance explained by subtype
+    Factor4         0.1459         15% of Factor4 variance explained by subtype
+
+
+ANSWER: BEST SUPPORTING PLOT
+──────────────────────────────
+
+**The Factor Boxplots (part2_mofa_factor_boxplots.png) most directly support the 
+claim that MOFA captures breast-cancer subtype biology.**
+
+
+WHY THIS PLOT IS THE STRONGEST EVIDENCE
+─────────────────────────────────────────
+
+1. VISUAL STRATIFICATION
+   Factor2 shows clear spatial separation of subtypes along a single latent axis:
+   - Basal tumors occupy the extreme negative region
+   - Luminal subtypes occupy positive/neutral regions
+   - This visualization directly demonstrates that the MOFA latent space 
+     encodes the biological distinctions between intrinsic subtypes
+
+2. STATISTICAL STRENGTH (η² = 0.7426)
+   - 74% of Factor2's variance is explained by subtype group membership
+   - This is exceptionally high (values > 0.14 are considered strong)
+   - Shows Factor2 is not just any latent factor, but one fundamentally 
+     organized by subtype biology
+
+3. DIRECT INTERPRETATION
+   - Boxplots show the actual MOFA output (latent factors, Z)
+   - Directly stratified by the PAM50 classification (the ground truth)
+   - No intermediate model required: factors speak for themselves
+   - Contrasts with confusion matrix, which requires fitting a classifier
+
+4. BIOLOGICAL MEANING
+   - The clear Basal ←→ Luminal separation along Factor2 maps directly to 
+     known breast cancer biology:
+     * Basal-like tumors are characterized by stem-cell-like features
+     * Luminal A tumors are characterized by hormone receptor expression
+     * These are fundamentally different transcriptomic/proteomic/epigenetic states
+   - MOFA Factor2 captures this dominant axis of variation
+
+5. SIMPLICITY
+   - Shows one plot, one factor (Factor2), perfect clarity
+   - Any viewer can immediately see subtype separation
+
+
+WHY OTHER PLOTS ARE SECONDARY
+──────────────────────────────
+
+R2 Heatmap:
+  - Validates that MOFA can reconstruct omics data, not that it captures subtypes
+  - A good model could capture omics structure without subtype stratification
+
+Confusion Matrix:
+  - Proves MOFA factors contain classifiable subtype information
+  - BUT requires training a secondary classifier (logistic regression)
+  - Does not visually demonstrate the stratification itself
+  - Overall 82.8% accuracy is good but not as compelling as seeing 
+    η² = 0.74 in a single plot
+
+Ranked Weights:
+  - Identifies driver genes (biological interpretation)
+  - Does not directly show subtype separation
+  - More relevant for "what genes define Factor2?" not "does MOFA capture subtypes?"
+
+
+CONCLUSION
+──────────
+The Factor Boxplots plot provides the most direct, visually compelling, and 
+statistically strong evidence that MOFA has learned a latent representation 
+organized by breast-cancer subtype biology, particularly through Factor2's 
+74%-explained variance and clear Basal-vs-Luminal stratification.
+

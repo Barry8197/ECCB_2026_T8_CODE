@@ -1,0 +1,101 @@
+{
+ "date": "2026-08-17",
+ "model": "claude-haiku-4-5",
+ "pricing_per_1M": {
+  "input": 1.0,
+  "output": 5.0,
+  "cache_read": 0.1,
+  "cache_write": 1.25
+ },
+ "rows": [
+  {
+   "query": "01-Q1 data shape",
+   "calls": 2,
+   "input": 2399,
+   "output": 291,
+   "cacheR": 0,
+   "cacheW": 0,
+   "cost": 0.003854
+  },
+  {
+   "query": "01-Q2 split",
+   "calls": 2,
+   "input": 2350,
+   "output": 194,
+   "cacheR": 0,
+   "cacheW": 0,
+   "cost": 0.00332
+  },
+  {
+   "query": "01-Q3 active factors",
+   "calls": 2,
+   "input": 2426,
+   "output": 327,
+   "cacheR": 0,
+   "cacheW": 0,
+   "cost": 0.004061
+  },
+  {
+   "query": "01-Q4 factor vs view",
+   "calls": 2,
+   "input": 2376,
+   "output": 207,
+   "cacheR": 0,
+   "cacheW": 0,
+   "cost": 0.003411
+  },
+  {
+   "query": "01-Q5 flagship drivers",
+   "calls": 3,
+   "input": 4832,
+   "output": 620,
+   "cacheR": 0,
+   "cacheW": 0,
+   "cost": 0.007932
+  },
+  {
+   "query": "01-Q6 predict+confusion",
+   "calls": 2,
+   "input": 2373,
+   "output": 206,
+   "cacheR": 0,
+   "cacheW": 0,
+   "cost": 0.003403
+  },
+  {
+   "query": "01-Q7 variance vs sep",
+   "calls": 2,
+   "input": 2746,
+   "output": 649,
+   "cacheR": 0,
+   "cacheW": 0,
+   "cost": 0.005991
+  },
+  {
+   "query": "01-Q8 out-of-sample",
+   "calls": 2,
+   "input": 2649,
+   "output": 675,
+   "cacheR": 0,
+   "cacheW": 0,
+   "cost": 0.006024
+  },
+  {
+   "query": "02-MCP flagship (Q5)",
+   "calls": 3,
+   "input": 5353,
+   "output": 570,
+   "cacheR": 0,
+   "cacheW": 0,
+   "cost": 0.008203
+  }
+ ],
+ "total": {
+  "calls": 20,
+  "input": 27504,
+  "output": 3739,
+  "cacheR": 0,
+  "cacheW": 0,
+  "cost": 0.046199000000000004
+ }
+}

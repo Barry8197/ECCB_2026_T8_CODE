@@ -1,18 +1,30 @@
-# Practical 1 Template: Phenotype Knowledge Graph from ICD-10 Codes
+# Practical 1: Querying a Phenotype Knowledge Graph
+
+The practical is delivered as
+[`../part-3-querying-the-knowledge-graph.ipynb`](../part-3-querying-the-knowledge-graph.ipynb).
+Work through the participant copy in
+[`../participant/`](../participant/) and fill in the `### YOUR CODE HERE ###` blocks.
 
 ## Objective
-Create a phenotype-focused knowledge graph from ICD-10 code examples.
 
-## Inputs
-- ICD-10 code list (CSV/TSV)
-- Mapping file to phenotype labels (optional)
+Start from ICD-10 codes — the vocabulary a hospital actually uses — and get from
+there to genes. Discover why that only partly works, recover what we can by
+traversing the disease ontology, and then ask the question the graph is genuinely
+good at: which diseases share genes?
 
-## Tasks
-- [ ] Load ICD-10 data
-- [ ] Convert rows into graph nodes and edges
-- [ ] Annotate node types (disease category, phenotype)
-- [ ] Export graph (GraphML or edge list)
+## What we will do
 
-## Stretch Goals
-- [ ] Add centrality or community metrics
-- [ ] Visualize subgraphs for selected phenotype groups
+- [ ] Measure ICD-10 coverage across the graph's 71 diseases (spoiler: 7 of them)
+- [ ] Diagnose *why* — a granularity mismatch, not a missing data source
+- [ ] Climb the `is_a` hierarchy to raise coverage from 7 to 70
+- [ ] Project the bipartite gene–disease graph onto diseases alone
+- [ ] Recover hereditary breast-ovarian cancer syndrome from shared genes
+- [ ] Spot the shared genes that are pharmacological rather than biological
+- [ ] Join the graph to the Session 2 transcriptomics matrix without silently
+      matching nothing
+
+## Stretch goals
+
+- [ ] Compare Jaccard against raw shared-gene counts — which diseases change rank, and why?
+- [ ] Find the disease pairs whose similarity is carried entirely by promiscuous genes
+- [ ] Export a subgraph to GraphML and open it in [Cytoscape](https://cytoscape.org/)

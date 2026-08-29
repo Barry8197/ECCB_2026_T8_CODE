@@ -30,8 +30,8 @@ Usage
     python build_coexpression_data.py
     python build_coexpression_data.py --omics /path/to/omics.pkl
 
-Output (written to ../data/)
-----------------------------
+Output (written to <repo>/data/session-1-data/)
+-----------------------------------------------
     coexpr_expression.csv.gz    patients x genes, log2 normalised expression
 """
 
@@ -43,7 +43,7 @@ from pathlib import Path
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-DATA_DIR = HERE.parent / "data"
+DATA_DIR = HERE.parents[2] / "data" / "session-1-data"
 REPO_ROOT = HERE.parents[2]
 
 # The bundle lives outside the repository because it is ~900 MB. This is where it
@@ -69,7 +69,7 @@ def main() -> None:
     parser.add_argument("--omics", type=Path, default=DEFAULT_OMICS,
                         help=f"path to the multi-omics pickle (default: {DEFAULT_OMICS})")
     parser.add_argument("--data-dir", type=Path, default=DATA_DIR,
-                        help="where to write the output (default: ../data)")
+                        help="where to write the output (default: <repo>/data/session-1-data)")
     args = parser.parse_args()
 
     if not args.omics.exists():

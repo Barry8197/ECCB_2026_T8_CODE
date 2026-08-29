@@ -51,7 +51,7 @@ __all__ = [
 ]
 
 # Default location of the knowledge-graph CSVs (kg_nodes.csv / kg_edges.csv).
-DEFAULT_KG_DATA_DIR = Path(__file__).parent / "../../data_tmp/session-1-data/"
+DEFAULT_KG_DATA_DIR = Path(__file__).parent / "../../data/session-1-data/"
 
 
 # --------------------------------------------------------------------------

@@ -35,8 +35,8 @@ Usage
     python build_kg_data.py --top-genes 50   # more genes per disease
     python build_kg_data.py --keep-cache     # keep the multi-GB downloads
 
-Outputs (written to ../data/)
------------------------------
+Outputs (written to <repo>/data/session-1-data/)
+------------------------------------------------
     kg_nodes.csv        id, type, name, extra
     kg_edges.csv        source, target, type, weight, evidence
     kg_evidence.csv     source, target, datatype, weight, evidence
@@ -398,7 +398,7 @@ def main() -> None:
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--top-genes", type=int, default=30,
                         help="strongest gene associations to keep per disease (default: 30)")
-    parser.add_argument("--out", type=Path, default=Path(__file__).parent.parent / "data",
+    parser.add_argument("--out", type=Path, default=Path(__file__).parent.parent.parent.parent / "data" / "session-1-data",
                         help="output directory for the generated CSVs")
     parser.add_argument("--cache", type=Path, default=Path(__file__).parent / ".cache",
                         help="where to stash raw downloads")

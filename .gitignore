@@ -221,3 +221,6 @@ __marimo__/
 
 # MyST build outputs
 _build
+
+# macOS
+.DS_Store

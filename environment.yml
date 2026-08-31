@@ -256,6 +256,7 @@ dependencies:
       - sympy==1.14.0
       - tabulate==0.10.0
       - threadpoolctl==3.6.0
+      - --extra-index-url https://download.pytorch.org/whl/cu126   
       - torch==2.12.1+cu126
       - torchview==0.2.7
       - torchvision==0.27.1+cu126

@@ -51,14 +51,14 @@ __all__ = [
 ]
 
 # Default location of the knowledge-graph CSVs (kg_nodes.csv / kg_edges.csv).
-DEFAULT_KG_DATA_DIR = Path(__file__).parent / "../../data/session-1-data/"
+DATA_DIR = Path("/data/session-1-data/")
 
 
 # --------------------------------------------------------------------------
 # Knowledge graph: loading and inspection
 # --------------------------------------------------------------------------
 
-def load_kg(data_dir: Path | str = DEFAULT_KG_DATA_DIR, directed: bool = False) -> nx.Graph:
+def load_kg(data_dir: Path | str = DATA_DIR, directed: bool = False) -> nx.Graph:
     """
     Build the knowledge graph from the generated CSVs.
 

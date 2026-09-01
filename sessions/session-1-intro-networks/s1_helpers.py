@@ -30,7 +30,7 @@ import pandas as pd
 import seaborn as sns
 from matplotlib.lines import Line2D
 
-DATA_DIR = Path(__file__).parent / "../../data/session-1-data/"
+DATA_DIR = Path("/data/session-1-data/")
 
 # Node types get fixed colours so a gene is the same colour in every figure of
 # the session. Anything unrecognised falls through to grey.

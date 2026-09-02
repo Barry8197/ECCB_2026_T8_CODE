@@ -20,8 +20,11 @@ this session does and what it finds — read that first, then the notebooks.
 | [`part-2-building-a-knowledge-graph.ipynb`](part-2-building-a-knowledge-graph.ipynb) | 09:40–10:10 | Building the graph in NetworkX, degree and hubs, association scores, sparsification, annotation sparsity |
 | [`part-3-querying-the-knowledge-graph.ipynb`](part-3-querying-the-knowledge-graph.ipynb) | 10:10–10:45 | **Practical.** ICD-10 coverage and ontology climbing (§A), shared-gene projection, separating cause from treatment, community detection (§B), bridging to the Session 2 omics data (§C, stretch), curated and inferred networks together (§D, closing) |
 
-These are the **participant** notebooks: the interesting lines are replaced with
-`### YOUR CODE HERE ###` for you to fill in. They are generated from the solution
+These are the **participant** notebooks. Five exercises are left for you to
+write, marked `### YOUR CODE HERE ###` with the instructions just above them in
+the same cell. Where several exercises share a shape, the first is given already
+written and labelled `WORKED EXAMPLE` — read those, they set up the ones you
+write. They are generated from the solution
 notebooks in the instructors' repository — if something needs changing, it has to
 change there and be regenerated, so edits made here will be overwritten.
 
@@ -34,11 +37,11 @@ s1_helpers.py       graph utilities, mostly adapted from co-expression material
 concept-glossary.md every term used in the session, defined
 data-prep/          developer scripts (build_kg_data.py,
                     build_coexpression_data.py, make_images.py) - not run by
-                    participants; they write to ../../data/session-1-data/
+                    participants; they write to /data/session-1-data/
 images/             diagrams used by the notebooks
 ```
 
-The data itself lives at the repository root, in `data/session-1-data/`.
+The data itself lives at `/data/session-1-data/` on the workshop server.
 
 ## Data
 
@@ -55,11 +58,10 @@ of TCGA-BRCA transcriptomics, subset to genes that are already graph nodes. Part
 §7 builds an inferred co-expression network from it, and Part 3 §D puts the two
 networks together.
 
-All five files live in [`../../data/session-1-data/`](../../data/session-1-data/)
-and are committed to this repository — together they are 1.3 MB, so Session 1
-needs no separate download. See
-[`../../data/session-1-data/README.md`](../../data/session-1-data/README.md)
-for provenance and licences.
+All five files live in `/data/session-1-data/` on the workshop server, which is
+where the notebooks read them from. They are **not** committed to this
+repository — you do not need to download anything, but the notebooks will only
+run in the workshop environment where that path exists.
 
 Genes are keyed by Ensembl gene ID, matching the TCGA-BRCA matrix used in
 Session 2, so the two join natively.
@@ -69,9 +71,8 @@ Session 2, so the two join natively.
 `pandas`, `numpy`, `networkx`, `matplotlib`, `seaborn`, `scipy` (see
 `environment.yml` at the repository root).
 
-Everything runs from the committed data **except Section C of Part 3**, which
-needs the full ~900 MB Session 2 omics pickle. Most participants will not have
-it: the notebook catches the missing file, prints a skip message and carries on,
-and Section D — the closing section that puts the curated and inferred networks
-together — deliberately uses the committed 1.1 MB subset instead so that it runs
-for everyone.
+Everything reads from `/data/session-1-data/` **except Section C of Part 3**,
+which additionally needs the Session 2 omics pickle. If that file is absent the
+notebook catches it, prints a skip message and carries on — Section D, the
+closing section that puts the curated and inferred networks together, uses the
+smaller expression matrix instead and runs regardless.

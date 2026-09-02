@@ -39,7 +39,9 @@ from src.mofa_tools import (  # noqa: E402
 # ---------------------------------------------------------------------------
 # One-time setup: load data + the cached MOFA model (never re-fit).
 # ---------------------------------------------------------------------------
-DATA_DIR = PROJECT_ROOT / "data"
+DATA_DIR = Path("/data")            # workshop servers mount the shared data here
+if not DATA_DIR.exists():           # local dev fallback: the clone's own data/
+    DATA_DIR = PROJECT_ROOT / "data"
 CACHE = PROJECT_ROOT / "outputs" / (
     f"trained_mofaplus_train_var{N_TOP_VARIABLE_HIGH_DIM_FEATURES}"
     f"_max{MAX_FACTORS}_ard_model.hdf5")

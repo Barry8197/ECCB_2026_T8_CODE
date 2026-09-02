@@ -1,2 +1,2 @@
 model,accuracy,balanced_accuracy,macro_f1
-MOFA factors + logistic regression,0.8278145695364238,0.7411111111111112,0.746614906832298
+MOFA factors + logistic regression,0.776,0.8143333333333335,0.7506902042369541

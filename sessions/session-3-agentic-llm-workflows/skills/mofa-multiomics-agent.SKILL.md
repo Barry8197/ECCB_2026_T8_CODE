@@ -76,8 +76,9 @@ from src.mofa_tools import (
 ROOT = Path.cwd()
 CACHE = ROOT / "outputs" / (f"trained_mofaplus_train_var{N_TOP_VARIABLE_HIGH_DIM_FEATURES}"
                             f"_max{MAX_FACTORS}_ard_model.hdf5")
+DATA_DIR = Path("/data") if Path("/data").exists() else ROOT / "data"
 
-X_omics, y = load_omics_data(ROOT / "data")
+X_omics, y = load_omics_data(DATA_DIR)
 X_tr, X_te, y_tr, y_te, tr, te = make_train_test_split(
     X_omics, y, TEST_SIZE, RANDOM_STATE, HIGH_DIMENSIONAL_VIEWS, N_TOP_VARIABLE_HIGH_DIM_FEATURES)
 views = list(X_tr.keys()); tr, te = tr.astype(str), te.astype(str)

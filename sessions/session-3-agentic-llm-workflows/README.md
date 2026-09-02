@@ -11,6 +11,7 @@ ECCB2026/
   assets/       Internal assets
   data/         As of now just mock test data
   notebooks/    Jupyter notebooks for guided practice session
+  planning/     Schedules, proposal notes, task lists
   server/       MCP server or tool-hosting demo code
   skills/       Example Skill.md-style reusable instructions
   slides/       Slide outlines and generated slide decks

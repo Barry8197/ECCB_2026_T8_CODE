@@ -31,8 +31,9 @@ from mofa_tools import (
 
 # Configuration
 RANDOM_STATE = 42
-DATA_DIR = Path("data").resolve()
-OUTPUT_DIR = Path("outputs").resolve()
+SESSION_DIR = Path(__file__).resolve().parent
+DATA_DIR = Path("/data") if Path("/data").exists() else SESSION_DIR / "data"
+OUTPUT_DIR = SESSION_DIR / "outputs"
 
 TEST_SIZE = 0.25
 N_TOP_VARIABLE_HIGH_DIM_FEATURES = 2000

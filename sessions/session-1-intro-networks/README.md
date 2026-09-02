@@ -35,9 +35,6 @@ session-story.md    the one-page narrative of the session - start here
 part-*.ipynb        the three notebooks
 s1_helpers.py       graph utilities, mostly adapted from co-expression material
 concept-glossary.md every term used in the session, defined
-data-prep/          developer scripts (build_kg_data.py,
-                    build_coexpression_data.py, make_images.py) - not run by
-                    participants; they write to /data/session-1-data/
 images/             diagrams used by the notebooks
 ```
 

@@ -65,7 +65,7 @@ graph gives its hereditary breast–ovarian diseases. `TP53` is starker still: a
 transcription. Neither absence means *unimportant*; they mean different things,
 and knowing which is the skill.
 
-**And the inferred network has a knob the curated one does not.** Sweeping the
+**And the computed network has a knob the curated one does not.** Sweeping the
 correlation threshold from 0.3 to 0.8 takes the same data from 39,593 edges to
 200. Nothing in the data says where to stop. The knowledge graph has exactly
 1,768 edges whatever we think — which removes that problem and introduces the

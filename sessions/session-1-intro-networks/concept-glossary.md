@@ -18,7 +18,7 @@
 | **Self-loop** | An edge from a node to itself. None in this graph. |
 | --- | --- |
 | **Knowledge graph** | A graph whose nodes and edges are **typed** and carry **provenance** — we can tell what kind of entity each node is, what kind of relationship each edge is, and on what evidence. |
-| **Inferred network** | A network whose edges are *computed from measurements* (e.g. co-expression above a correlation threshold). Contrast with curated. |
+| **Computed network** | A network whose edges are *calculated from measurements* — correlate every pair, keep what clears a threshold. Contrast with curated. |
 | **Curator / curation** | A biologist employed by a database to read published papers and record their findings as structured entries (gene X, disease Y, evidence PMID Z). Also covers automated contributors — text mining, GWAS pipelines. Every edge in a knowledge graph exists because a curator or pipeline put it there. |
 | **Curated network** | A network whose edges are *asserted facts* read out of a database. Can only contain what somebody already recorded. |
 | **Node type** | The kind of entity a node represents: `gene`, `disease`, or `icd10`. |

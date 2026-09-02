@@ -119,7 +119,7 @@ def gene_by_symbol(G: nx.Graph, symbol: str) -> str:
 
 
 # --------------------------------------------------------------------------
-# Inferred (co-expression) networks
+# Computed (co-expression) networks
 #
 # The counterpart to load_kg. Everything above builds a graph by reading recorded
 # facts; everything here builds one by computing correlations from measurements.
@@ -160,7 +160,7 @@ def coexpression_network(expression: pd.DataFrame, threshold: float,
                          absolute: bool = True,
                          correlations: pd.DataFrame | None = None) -> nx.Graph:
     """
-    Build an inferred network: an edge wherever two genes correlate above `threshold`.
+    Build a computed network: an edge wherever two genes correlate above `threshold`.
 
     Every node is a gene - one node type, unlike the knowledge graph - and every
     edge carries the correlation as its `weight`. Nodes are added for all genes,

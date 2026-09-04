@@ -109,7 +109,8 @@ def make_train_test_split(X_omics, y, test_size, random_state,
     y_train, y_test : pd.Series
     train_ids, test_ids : pd.Index
     """
-    patient_ids = y.index.astype(str)
+    # numpy array, not pd.Index: sklearn can't index pandas 3's arrow-backed string Index
+    patient_ids = y.index.astype(str).to_numpy()
     train_ids, test_ids = train_test_split(
         patient_ids, test_size=test_size, random_state=random_state, stratify=y,
     )

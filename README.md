@@ -1,6 +1,7 @@
 # ECCB2026 Workshop Template Repository
 
-Template repository for a full-day workshop on biological networks, multi-omics integration, and LLM-agent workflows for biomedical knowledge graphs.
+## Access to data via Zenodo 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22297463.svg)](https://doi.org/10.5281/zenodo.22297463)
 
 ## Workshop Agenda
 

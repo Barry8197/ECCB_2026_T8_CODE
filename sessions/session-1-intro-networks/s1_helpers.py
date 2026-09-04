@@ -167,7 +167,7 @@ def coexpression_network(expression: pd.DataFrame, threshold: float,
     including ones that end up with no edges, because "which genes dropped out at
     this threshold?" is a question worth being able to ask.
 
-    `absolute` thresholds on |r|, so strong anti-correlation counts as a
+    `absolute` thresholds on r, so strong anti-correlation counts as a
     relationship. Pass `correlations` to reuse a matrix already computed - it is
     by far the expensive part, and the threshold sweep calls this repeatedly.
     """
@@ -225,7 +225,7 @@ def coexpression_threshold_sweep(expression: pd.DataFrame, thresholds,
 def coexpression_partners(correlations: pd.DataFrame, gene_id: str,
                           G: nx.Graph | None = None, top_n: int = 10) -> pd.DataFrame:
     """
-    The genes most strongly co-expressed with one gene, strongest |r| first.
+    The genes most strongly co-expressed with one gene, strongest r first.
 
     Pass the knowledge graph as `G` to get gene symbols alongside the Ensembl ids
     - the ranking is unreadable without them.
